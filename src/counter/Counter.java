@@ -1,17 +1,23 @@
 package counter;
 
-public final class Counter {
-    private int count;
-    public Counter() { count = 0; }
-    public int get() { return count; }
-    public int set(int value) { count = value; return count; }
-    public int inc() { count++; return count; }
-    public int inc(int value) { count += value; return count; }
-    public int dec() { count--; return count; }
-    public int dec(int value) { count -= value; return count; }
-    public int lateInc() { int c = count; count++; return c; }
-    public int lateInc(int value) {int c = count; count += value; return c; }
-    public int lateDec() { int c = count; count--; return c; }
-    public int lateDec(int value) {int c = count; count -= value; return c; }
-    public int zero() {return set(0);}
+public interface Counter<T> {
+	public T get();
+
+	public T set(T value);
+
+	public T inc();
+
+	public T inc(T value);
+
+	public T dec();
+
+	public T dec(T value);
+
+	public T lateInc();
+
+	public T lateInc(T value);
+
+	public T lateDec();
+
+	public T lateDec(T value);
 }
